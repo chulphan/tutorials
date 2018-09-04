@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                background-color: blanchedalmond;
+            }
+        </style>
+    </head>
+    <frameset cols="40%, 60%">
+        <frameset rows="40%, 60%">
+            <frame src="./frame_content1.html"/>
+            <frame src="./frame_content2.html"/>
+        </frameset>
+        <frame name="content" src="./frame_content3.html"/>
+        <noframes>
+            <body>
+                <div>
+                    이 기기에서는 프레임을 지원하지 않습니다...
+                </div>
+            </body>
+        </noframes>
+    </frameset>
+</html>

@@ -8,19 +8,18 @@
         <button onclick="callfunc();">click me!!</button>
         <button onclick="stopfunc();">stop~~</button>
         <script>
-           var i = 1;
-           var box = document.getElementById("box");
-           var yahoo = setInterval(function () {
-               box.innerHTML += `${i}<br/>`;
-               i++;
-           }, 2000);
-
-           function callfunc() {
-               yahoo;
+            var printI = null;
+            function callfunc() {
+                var i = 1;
+                var box = document.getElementById("box");
+                printI = setInterval(function () {
+                    box.innerHTML += `${i}<br/>`; //
+                    i++;
+                }, 2000);
            }
 
            function stopfunc() {
-               clearInterval(yahoo);
+               clearInterval(printI);
            }
         </script>
     </body>

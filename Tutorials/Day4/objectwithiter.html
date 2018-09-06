@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <style>
+            ul {
+                font-size: 23px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>List Of Colors</h1>
+        <ul id="colorlist">    
+
+        </ul>
+        <script>
+            let colors = {'red': 'red', 'yellow': 'yellow', 'green': 'green', 'blue': 'blue'};
+            let colorList = document.getElementById('colorlist');
+            for(let color in colors) {
+                colorList.innerHTML += `<li id="${color}" style="color:${color};">${colors[color]}</li>`;
+            }
+        </script>
+    </body>
+</html>

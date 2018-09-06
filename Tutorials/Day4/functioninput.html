@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <style>
+            #grid {
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+            }
+
+            #screen {
+                max-width: 500px;
+            }
+
+            #buttons {
+                max-width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="grid">
+            <div id="screen">
+                
+            </div>
+            <div id="buttons">
+                <button id="add" onclick="add()">더하기</button>
+                <button id="mul" onclick="mul()">곱하기</button>
+                <button id="div" onclick="div()">나누기</button>
+                <button id="sub" onclick="sub()">빼기</button>
+            </div>
+        </div>
+        <script>
+            let add = () => {
+               let i = parseInt(prompt());
+               let j = parseInt(prompt());
+               
+               let sum = i + j;
+               
+               let screen = document.getElementById("screen");
+               screen.innerHTML += `${i} + ${j} = ${sum}<br/>`;
+
+               return i + j;
+            }
+
+            let mul = () => {
+                let i = parseInt(prompt());
+                let j = parseInt(prompt());
+
+                let mul = i * j;
+                
+                let screen = document.getElementById("screen");
+                screen.innerHTML += `${i} * ${j} = ${mul}<br/>`;
+
+                return i * j;
+            }
+
+            let div = () => {
+                let i = parseInt(prompt());
+                let j = parseInt(prompt());
+
+                let screen = document.getElementById("screen");
+
+                if(j === 0) {
+                    screen.innerHTML += "j is zero so cannot divide.<br/>"
+                    return false;
+                }
+                
+                let div = i / j;
+                screen.innerHTML += `${i} / ${j} = ${div}<br/>`;
+
+                return i / j;
+            }
+
+            let sub = () => {
+                let i = parseInt(prompt());
+                let j = parseInt(prompt());
+                
+                let sub = i - j;
+
+                let screen = document.getElementById("screen");
+                screen.innerHTML += `${i} - ${j} = ${sub}<br/>`;
+
+                return i - j;
+            }
+        </script>
+    </body>
+</html>

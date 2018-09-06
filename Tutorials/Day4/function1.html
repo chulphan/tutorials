@@ -1,0 +1,27 @@
+<html>
+    <head></head>
+    <body>
+
+        <div id="box">
+
+        </div>
+        <button onclick="callfunc();">click me!!</button>
+        <button onclick="stopfunc();">stop~~</button>
+        <script>
+           var i = 1;
+           var box = document.getElementById("box");
+           var yahoo = setInterval(function () {
+               box.innerHTML += `${i}<br/>`;
+               i++;
+           }, 2000);
+
+           function callfunc() {
+               yahoo;
+           }
+
+           function stopfunc() {
+               clearInterval(yahoo);
+           }
+        </script>
+    </body>
+</html>

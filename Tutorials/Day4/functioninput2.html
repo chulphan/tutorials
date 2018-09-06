@@ -1,0 +1,65 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+
+            function executor() {
+                
+                for(;;){
+                    let operator = prompt("Enter an operator: ");
+                    if(operator === "" || operator === null || operator === undefined) {
+                        alert('byebye~~');
+                        return;
+                    }
+                    calculator(operator);
+                }
+
+                
+            }
+
+            let calculator = (operator) => {
+                let i = parseInt(prompt("Enter a first argument"));
+                let j = parseInt(prompt("Enter a second argument"));
+
+                switch(operator) {
+                    case '+':
+                        alert("result: " + add(i, j));
+                        break;
+                    case '-':
+                        alert("result: " + sub(i, j));
+                        break;
+                    case '*':
+                        alert("result: " + mul(i, j));
+                        break;
+                    case '/':
+                        alert("result: " + div(i, j));
+                        break;
+                    default:
+                        alert('wrong operator');
+                        break;
+                }
+            }
+
+            let add = (i, j) => {
+                return i + j;
+            }
+
+            let sub = (i, j) => {
+                return i - j;
+            }
+
+            let mul = (i, j) => {
+                return i * j;
+            }
+
+            let div = (i, j) => {
+                if (j === 0) {
+                    return "wrong number.";
+                }
+                return i / j;
+            }
+
+            executor();
+        </script>
+    </body>
+</html>

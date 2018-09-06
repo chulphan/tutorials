@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+
+            
+
+            let numbering = () => {
+                for(let i = 1; i <= 10; i++) {
+                    alert('arrow function is called: ' + i);
+                }
+            }
+            
+            numbering();
+
+            (function () {
+                i = 0; 
+                while(i < 10) {
+                    alert('anonymous function is called: ' + i);
+                    i++;
+                }
+            })();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+    <head></head>
+    <body>
+        <div id="demo">
+
+        </div>
+        <script>
+            var myVar = setInterval(myTimer, 1000);
+
+            function myTimer() {
+                var d = new Date();
+                // Return the time portion of a Date object as a string,
+                var t = d.toLocaleTimeString();
+                document.getElementById("demo").innerHTML = t;
+            }
+        </script>
+    </body>
+</html>

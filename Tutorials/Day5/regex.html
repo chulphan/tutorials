@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script>
+            function checkJoinVal() {
+                var joinId = document.getElementById("joinId");
+                var joinPw = document.getElementById("joinPw");
+                var idPattern = /^[a-z]+[a-z0-9]{4,10}$/g; // 첫 시작은 소문자 a-z로 시작해야하고 그 다음 문자부터는 소문자 영문자가 온다. 아이디 길이는 5 ~ 11자이다. 그리고 대소문자를 구분하지 않는다.
+                var pwPattern = 0; // pwPattern 은 이해하지 못하겠다.. /^(?=.*[a-zA-Z])((?=.*\d)|(?=.*\W)).{6,20}$/
+
+                if(joinId.value === "" || joinId.value === null) {
+                    alert('id를 입력해주세요');
+
+                    return false;
+                }
+
+                if(joinPw.value === "" || joinPw.value === null) {
+                    alert('pw를 입력해주세요');
+
+                    return false;
+                }
+                
+                if(joinId.value.length > 11 || joinId.value.length < 5) {
+                    alert('id의 길이는 5자 이상 11자 이하입니다.');
+
+                    return false;
+                }
+
+                if(!idPattern.test(joinId.value)) {
+                    alert('아이디는 영문 또는 영문+숫자만 가능합니다');
+
+                    return false;
+                }
+
+                return true;
+            }
+        </script>
+        <title>아이디 유효성 검사</title>
+        <style>
+
+            body {
+                font-size: 35px;
+            }
+
+            #joinBox {
+                width: 600px;
+                margin: auto;
+            }
+
+            #box {
+                position: absolute;
+                margin: auto;
+                top: 300px;
+                border: 1px solid gray;
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <div id="joinBox">
+            <form id="joinForm" action="" method="post" onsubmit="checkJoinVal();">
+                <div id="box">
+                    <label for="joinId">Id: <input type="text" id="joinId" /></label><br/>
+                    <label for="joinPw">Pw: <input type="password" id="joinPw" /></label><br/>
+                    <input type="submit" id="joinButton"/>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

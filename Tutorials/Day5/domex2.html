@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <style>
+            #table {
+                border: 10px;
+                color: green;
+                font-size: 20px;
+            }
+        </style>
+        <script>
+            var table = document.getElementById("table");
+            var tableAttrs = table.attributes;
+            for(var i = 0; i < tableAttrs.length; i++) {
+                if(tableAttrs[i].nodeName.toLowerCase() == "border")
+                    table.border = "1";
+                console.log(tableAttrs[i]);
+            }
+            table.summary = "note: increased border";
+        </script>
+    </head>
+    <body>
+        <table id="table">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>a</td>
+                <td>b</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <script>
+            var MYAPP = {};
+
+            MYAPP.calculator = {
+                'left': null,
+                'right': null
+            }
+
+            MYAPP.coordinate = {
+                'left': null,
+                'right': null
+            }
+
+            MYAPP.calculator.left = 10;
+            MYAPP.calculator.right = 20;
+
+            function sum() {
+                return MYAPP.calculator.left + MYAPP.calculator.right;
+            }
+
+            document.write(sum() + "<br/>");
+
+            // 하나의 전역변수도 사용하기 싫을때.
+            // IIFE 를 사용함. MYAPP은 그러면 저 함수 내에서만 존재하기 때문에 전역변수를 사용할 필요가 없다.
+            (function() {
+                var MYAPP = {};
+
+                MYAPP.calculator = {
+                    'left': null,
+                    'right': null
+                }
+
+                MYAPP.coordinate = {
+                    'left': null,
+                    'right': null
+                }
+
+                MYAPP.calculator.left = 10;
+                MYAPP.calculator.right = 20;
+
+                function sum() {
+                    return MYAPP.calculator.left + MYAPP.calculator.right;
+                }
+
+                document.write(sum() + "<br/>");
+            }())
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

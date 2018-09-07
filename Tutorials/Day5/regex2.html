@@ -20,6 +20,12 @@
 
                 chatContent.value = "";
             }
+
+            function callChatFtn(e) {
+                if(e.keyCode === 13) {
+                    chatFunction();
+                }
+            }
         </script>
     </head>
     <body>
@@ -27,11 +33,10 @@
             <div id="chatting">
 
             </div>
-            <form id="typeChat" action="" method="post">
-                <div id="button">
-                    <input type="text" id="chatcontent"/><input type="button" value="입력" onclick="chatFunction();"/>
-                </div>
-            </form>
+            <div id="button">
+                <input type="text" id="chatcontent" onkeypress="callChatFtn(event);" />
+                <input type="button" value="입력" onclick="chatFunction();" />
+            </div>
         </div>
     </body>
 </html>

@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <script>
+            var vscope = 'global'; // global variable
+
+            function fscope() {
+                var vscope = 'local'; // local variable
+                alert(vscope); // 함수 내에 vscope 가 있는지 찾고 없으면 밖에서 찾는다.
+            }
+
+            fscope();
+
+            function fscope2() {
+                alert(vscope); // 함수 내에 vscope라는 변수가 없으므로 함수 바깥에 있는 vscope 를 참조한다.
+            }
+
+            fscope2();
+
+            function fscope3() {
+                var lv = 'local variable.';
+                alert(lv);
+            }
+            fscope3();
+            alert(lv);
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

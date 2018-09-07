@@ -9,29 +9,29 @@
 
                 if(joinId.value === "" || joinId.value === null) {
                     alert('id를 입력해주세요');
-
+                    joinId.focus();
                     return false;
                 }
 
                 if(joinPw.value === "" || joinPw.value === null) {
                     alert('pw를 입력해주세요');
-
+                    joinPw.focus();
                     return false;
                 }
                 
                 if(joinId.value.length > 11 || joinId.value.length < 5) {
                     alert('id의 길이는 5자 이상 11자 이하입니다.');
-
+                    joinId.focus();
                     return false;
                 }
 
                 if(!idPattern.test(joinId.value)) {
                     alert('아이디는 영문 또는 영문+숫자만 가능합니다');
-
+                    joinId.focus();
                     return false;
                 }
 
-                return true;
+                return false;
             }
         </script>
         <title>아이디 유효성 검사</title>
@@ -58,7 +58,7 @@
     </head>
     <body>
         <div id="joinBox">
-            <form id="joinForm" action="" method="post" onsubmit="checkJoinVal();">
+            <form id="joinForm" action="" method="post" onsubmit="return checkJoinVal();">
                 <div id="box">
                     <label for="joinId">Id: <input type="text" id="joinId" /></label><br/>
                     <label for="joinPw">Pw: <input type="password" id="joinPw" /></label><br/>

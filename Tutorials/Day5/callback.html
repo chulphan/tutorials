@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var numbers = [9, 4, 13, 2, 13, 5, 99, 1, 7];
+            
+            function inOrderSort(a, b) {
+                return a - b;
+            }
+
+            function reverseOrderSort(a, b) {
+                return b - a;
+            }
+
+            console.log(numbers.sort(inOrderSort));
+            console.log(numbers.sort(reverseOrderSort));
+        </script>
+    </body>
+</html>

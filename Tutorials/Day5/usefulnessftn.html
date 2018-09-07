@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <script>
+            
+            // javascript 에서 함수는 변수도 될 수 있고, 매개변수도 되고 리턴도 될 수 있기 때문에 first-class object 라고 부른다.
+            
+            function calculator(operator) {
+                var collectOperator = {
+                    'plus': function(left, right) {return left + right},
+                    'minus': function(left, right) {return left - right},
+                    'divide': function(left, right) {if(right === 0) return false; return left / right;},
+                    'multiple': function(left, right) {return left * right}
+                }
+
+                return collectOperator[operator];
+            }
+
+            alert(calculator('plus')(3, 3));
+            alert(calculator('minus')(10, 2));
+            alert(calculator('divide')(5, 2));
+            alert(calculator('multiple')(4, 5));
+
+            var bucket = [
+                function(num) {return Math.sqrt(num)},
+                function(num) {return Math.sin(num)},
+                function(num) {return Math.cos(num)}
+            ]
+
+            var phases = [
+                function() {return 'sqrt: '},
+                function() {return 'sin: '},
+                function() {return 'cos: '}
+            ]
+
+            for(var i = 0; i < bucket.length; i++) {
+                alert(phases[i]() + bucket[i](4));
+            }
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

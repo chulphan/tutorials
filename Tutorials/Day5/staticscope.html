@@ -15,6 +15,17 @@
             }
 
             a();
+
+            // 지역변수는 함수가 시작 될 때 생성되어지고, 그 함수가 완료 되었을때 삭제된다.
+            function c() {
+                var j = 3;
+            }
+            
+            function d() {
+                c();
+                document.write(j); // 그러한 이유로 여기서는 j를 볼 수 없는 것이다.
+            }
+            
         </script>
     </head>
     <body>

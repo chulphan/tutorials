@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+
+            function isFunction() {
+                alert(`I'm function!`);
+            }
+
+            var objectBucket = {
+                key1: function() {
+                    alert(`I'm method!!`);
+                }
+            }
+
+            // 함수는 값이기 때문에 다른 함수의 인자로 전달될 수도 있다.
+            function cal(func, num) {
+                return func(num);
+            }
+
+            function increaseOne(num) {
+                return num + 1;
+            }
+
+            function decreaseOne(num) {
+                return num - 1;
+            }
+
+            alert(cal(increaseOne, 20));
+            alert(cal(decreaseOne, 40));
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>

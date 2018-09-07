@@ -14,8 +14,16 @@
             for(var i = 0; i <= 10; i++) {
                 var j = 12; // for, if 등의 내에서 var 로 새로 변수를 생성하면 그것들에 귀속되지 않는다.
             }
-    
+
             alert(j) // It is not error!!
+
+            isGlobal();
+            
+            alert(name);
+
+            function isGlobal() {
+                var name = "global!!";
+            }
         </script>
     </head>
     <body>

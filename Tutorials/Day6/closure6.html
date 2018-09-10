@@ -1,0 +1,18 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function add() {
+                var counter = 0;
+                function plus() {
+                    counter += 1;
+                }
+                plus();
+                return counter;
+            }
+
+            // 만약에 add() 내의 내부함수인 plus() 함수가 외부영역을 참조할 수 있었다면, 앞에서의 문제를 해결할 수 있었을 것이다.
+            // 이때 필요한 것이 자바스크립트의 closure이다.
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var funcThis = null;
+
+            function Func() {
+                funcThis = this;
+                console.log('value of this in func(): ' + this);
+            }
+
+            var o1 = Func();
+            if(funcThis === window) {
+                document.write('funcThis === window. <br/>');
+            }
+
+            var o2 = new Func();
+            if(o2 === funcThis) {
+                document.write('funcThis === o2 <br/>');
+            }
+
+            Func();
+        </script>
+    </body>
+</html>

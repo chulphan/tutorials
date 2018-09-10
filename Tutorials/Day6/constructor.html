@@ -1,0 +1,33 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var person = {} // create an empty object.
+
+            person.name = 'Chul'; // property of 'person'
+            person.introduce = function() {  // method of 'person'
+                return 'My name is ' + this.name; // this는 함수를 가르킴.
+            };
+
+            document.write(person.introduce());
+
+            // 이렇게 하면 person의 선언과정과 그 아래의 코드에서 person의 의도가 변질 될 수 있기 때문에 저것을 그룹화 시키는게 좋다.
+
+            var person2 = {
+                'name': 'chul',
+                'introduce': function() {
+                    return 'My Name is : ' + this.name;
+                }
+            }
+
+            var person3 = {
+                'name': 'yoon',
+                'introduce': function() {
+                    return 'My Name is : ' + this.name;
+                }
+            }
+
+            // 하지만 이러한 방법은 중복이 발생하고 있어서 비효율적이다.
+        </script>
+    </body>
+</html>

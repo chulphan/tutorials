@@ -1,0 +1,18 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var counter = 0;
+            
+            function add() {
+                var counter = 0; // add()의 counter는 더 이상 이 함수 바깥에 있는 counter변수를 참조하지 않는다.
+                counter += 1;
+                console.log(counter);
+            }
+            
+            add();
+            add();
+            add(); // 결과로 1을 출력한다. 왜냐하면 지역변수는 함수가 실행될 때 생성되고 실행이 끝나면 지워지기 때문이다. (변수 생명주기.)
+        </script>
+    </body>
+</html>

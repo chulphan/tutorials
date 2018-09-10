@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var person = {
+                fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            }
+
+            var person1 = { 
+                firstName: 'chulhwan',
+                lastName: 'kim'
+            }
+
+            console.log(person.fullName.apply(person1)); //person 객체 내의 fullName 메소드에 대해 apply 메소드를 적용하여 실행한다.
+        </script>
+    </body>
+</html>

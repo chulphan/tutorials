@@ -1,0 +1,14 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function func() {
+                if(window === this) {
+                    document.write("window === this");
+                }
+            }
+
+            func(); // "window === this".. 즉, this와 window는 타입과 값이 일치한다.
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+
+            // 이렇게 하면 앞에서 발생했던 중복의 문제가 해결된다.
+            // new 생성자는 객체를 생성하는 명령어이다.
+            // 함수를 이해하는 것이 자바스크립트를 이해하는 데에 제일 중요하다....(함수형 언어이기 때문에)
+
+            function Product(name, price) {
+                this.name = name;
+                this.price = price;
+
+                this.getProductInfo = function() {
+                    return 'Name: ' + this.name + "\nPrice: " + this.price;
+                }
+            }
+
+            var pot = new Product('pot', 20000);
+
+            var refrigerator = new Product('refrigerator', 1000000);
+
+            document.write(pot.getProductInfo() + "<br/>");
+            document.write(refrigerator.getProductInfo() + "<br/>");
+        </script>
+    </body>
+</html>

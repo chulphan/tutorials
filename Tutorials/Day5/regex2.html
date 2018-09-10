@@ -5,7 +5,7 @@
             function chatFunction() {
                 var chatContent = document.getElementById("chatcontent");
                 var chatting = document.getElementById('chatting');
-                var ignorePattern = /(미친|ㄳ|죽어|나쁜놈|ㅄ)/;
+                var ignorePattern = /(미친|ㄳ|죽어|나쁜놈|ㅄ)/g;
                 
                 if(chatContent.value.length === 0){
                     alert('채팅내용을 입력해주세요.');

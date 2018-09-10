@@ -1,0 +1,18 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function add() {
+                var counter = 0;
+                counter += 1;
+                return counter;
+            }
+
+            add();
+            add();
+            add(); // 여기서의 add() 도 여전히 0ㅇ을 출력할 것이다. 앞의 예제에서의 문제와 같은 이유로.
+
+            // 이 문제를 해결하기 위해서 자바스크립트의 내부함수가 필요하다.
+        </script>
+    </body>
+</html>

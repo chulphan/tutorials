@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var counter = 0; // Initiate counter. 전역변수.(in window object.)
+
+            function add() {
+                counter += 1; // counter 는 이 함수 바깥에 있는 add를 참조한다.
+                console.log(counter);
+            }
+
+            add();
+            add();
+            add(); // 카운터가 정상적으로 동작한다.
+
+            // 하지만 이 add() 함수의 문제는 페이지 내의 어떠한 코드에서든지 counter의 값을 변경할 수 있다는 것이다.
+        </script>
+    </body>
+</html>

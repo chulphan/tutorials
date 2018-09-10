@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var person = {
+                fullName: function(city, country) {
+                    return this.firstName + " " + this.lastName + " " + city + ", " + country;
+                }
+            }
+
+            var myInfo = {
+                firstName: 'ChulHwan',
+                lastName: 'Kim'
+            }
+            
+            // apply의 첫번째 인자는 this를 통해서 참조가능하고, 두번째 인자는 해당 메소드의 argument로 전달된다.
+            console.log(person.fullName.apply(myInfo, ['Ilsan', 'Korea']));
+        </script>
+    </body>
+</html>

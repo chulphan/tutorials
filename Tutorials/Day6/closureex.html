@@ -1,0 +1,40 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function setInfo(name, age) {
+                return {
+                    get_name: function() {
+                        return name;
+                    },
+
+                    get_age: function() {
+                        return age;
+                    },
+
+                    set_name: function(_name) {
+                        name = _name;
+                    },
+
+                    set_age: function(_age) {
+                        age = _age;
+                    }
+                }
+            }
+
+            var chul = setInfo('chul', 29);
+            var yoon = setInfo('yoon', 27);
+
+            console.log(chul.get_name());
+            console.log(chul.get_age());
+            console.log(yoon.get_name());
+            console.log(yoon.get_age());
+
+            chul.set_name('chulhwan');
+            yoon.set_name('yoonjeong');
+
+            console.log(chul.get_name());
+            console.log(yoon.get_name());
+        </script>
+    </body>
+</html>

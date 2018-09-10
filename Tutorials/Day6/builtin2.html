@@ -1,0 +1,16 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var arr = new Array('seoul', 'new york', 'lakarkh', 'pusan', 'tsukuba');
+            
+            Array.prototype.getRandomValue = function() {
+                var index = Math.floor(this.length * Math.random()); // this가 가르키는 것은 생성자를 통해 만들어진 인스턴스이다.
+
+                return this[index];
+            }
+
+            alert(arr.getRandomValue());
+        </script>
+    </body>
+</html>

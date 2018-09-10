@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function Person(name) {
+                this.name = name;
+            }
+
+            Person.prototype.name = null;
+            Person.prototype.introduce = function() {
+                return 'My name is ' + this.name;
+            }
+
+            function Programmer(name) {
+                this.name = name;
+            }
+
+            Programmer.prototype = new Person();
+
+            var p1 = new Programmer('chulhwan k'); // 객체(instance)를 생성한다. 그리고 p1에 할당한다.
+            alert(p1.introduce());
+        </script>
+    </body>
+</html>

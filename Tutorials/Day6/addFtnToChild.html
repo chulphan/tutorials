@@ -1,0 +1,39 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function Book(title, price) {
+                this.title = title;
+                this.price = price;
+            }
+
+            Book.prototype.title = null;
+            Book.prototype.price = 0;
+            Book.prototype.Info = function() {
+                return 'Book Title: ' + this.title + '\nBook Price: ' + this.price;
+            }
+
+            function CsBook(title, price) {
+                this.title = title;
+                this.price = price;
+            }
+            
+            // 자식의 prototype에 부모클래스의 instance를 할당하는 것을 통해 상속을 받았다.
+            CsBook.prototype = new Book();
+            // 자식의 프로토타입에 author를 추가했다.
+            CsBook.prototype.author = null;
+            // 자식의 프로토타입에 setAuthor() 메소드를 추가했다.
+            CsBook.prototype.setAuthor = function(author) {
+                this.author = author;
+            }
+            // overriding...
+            CsBook.prototype.Info = function() {
+                return 'Book Title: ' + this.title + '\nBook Price: ' + this.price + '\nAuthor: ' + this.author;
+            }
+            // 정상적으로 출력!
+            var javaBook = new CsBook('javaBook', 23000);
+            javaBook.setAuthor('anonymous');
+            alert(javaBook.Info());
+        </script>
+    </body>
+</html>

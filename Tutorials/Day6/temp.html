@@ -1,0 +1,40 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var callbackText = {
+                text: 'No text',
+                setText: function(param, param2) {
+                    this.text = param;
+                },
+                getThis: function() {
+                    if(this === window)
+                        return 'this === window';
+                    else if (this === callbackText)
+                        return 'this === callbackText';
+                    else
+                        return 'what is this????';
+                }
+            }
+
+            function callbackSample(name, callback) {
+                callback(name);
+            }
+            
+            /*
+                function callbackSample("this is callback sample", callbackText.setText() {
+                    this.text = param;
+                }) {
+                    callbackText.setText("this is callback sample");
+                }
+            */
+            
+            callbackSample("This is callback sample", callbackText.setText);
+
+            setTimeout(console.log('line 26 ', callbackText.text, callbackText.getThis()), 100);
+            setTimeout(console.log('line 27 ', window.text, callbackText.getThis()), 100);      // window.text가 가능한 이유는 callback(name)이 호출된 시점이 함수 내부에서 실행됐기 때문..
+        
+            console.log('line 30 ', window.text);
+        </script>
+    </body>
+</html>

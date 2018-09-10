@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var myObj = {
+                firstName: 'kim',
+                lastName: 'chul',
+                setName: function(firstName, lastName) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                }
+            }
+
+            function callObj(firstName, lastName, callback) {
+                callback(firstName, lastName);
+            }
+
+            callObj('kkk', 'ggg', myObj.setName);
+
+            console.log(window.firstName);
+            console.log(myObj.firstName);
+        </script>
+    </body>
+</html>

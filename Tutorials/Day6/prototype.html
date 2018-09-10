@@ -1,0 +1,33 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+
+            // Prototype Chaning. 
+            // 프로토타입의 할당이 얽혀있는 것.
+            // 상속의 상속이 가능하다.
+            function First() {
+
+            }
+
+            First.prototype.firstProp = true;
+
+            function Second() {
+
+            }
+
+            Second.prototype = new First();
+            //Second.prototype.firstProp = 3;
+            function Third() {
+
+            }
+
+            Third.prototype = new Second();
+            //Third.prototype.firstProp = 2;
+
+            var p = new Third();
+            //p.ultraProp = 1;
+            alert(p.firstProp); // p 객체 내에 ultraProp이 있는지를 찾고 없으면 해당 객체의 생성자를 찾아가서 ultraProp 프로퍼티가 있는지 찾는다.
+        </script>
+    </body>
+</html>

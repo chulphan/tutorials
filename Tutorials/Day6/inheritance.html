@@ -1,0 +1,31 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            // function Person(name) {
+            //     this.name = name;
+            //     this.introduce = function() {
+            //         return 'My Name Is : ' + this.name;
+            //     }
+            // }
+
+            // var p1 = new Person('chul kim');
+            // alert(p1.introduce());
+            
+            function Person(name) {
+                this.name = name;
+            }
+            
+            // 상속을 위한 준비작업.
+            // 함수 내에 prototype 이라는 특수한 객체가 존재해서 거기에 name과 introduce를 추가한다.
+            Person.prototype.name = null;
+            Person.prototype.introduce = function() {
+                return 'My name is ' + this.name;
+            }
+
+            var me = new Person('chulhwan kim');
+            alert(me.introduce());
+
+        </script>
+    </body>
+</html>

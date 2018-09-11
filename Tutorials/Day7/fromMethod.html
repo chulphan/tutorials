@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            // ES2015 'from' method.
+            
+            function addMark() {
+                // let newData = [];
+
+                // for(let i = 0; i < arguments.length; i++) {
+                //     newData.push(arguments[i] + "!");
+                // }
+                
+                // let newData2 = arguments.map(function(value) {
+                //     return value + "!";
+                // })
+                
+                // ES6 이전에는 Array.prototype.slice.call(arguments..? 혹은 null, arguments)로 했었다.
+                let newArray = Array.from(arguments);
+                console.log(arguments);
+                let newData = newArray.map(function(value) {
+                    return value + "!";
+                })
+
+                console.log(newData);
+            }
+
+            addMark(1, 2, 3, 4, 5);
+
+            var o1 = {0: 1, 1: 2, 2: 3, 3: 4, 'length': 4};
+            let temp = Array.from(o1);
+
+            let newTemp = temp.map(function(value) {
+                return value;
+            });
+
+            console.log(newTemp);
+            
+        </script>
+    </body>
+</html>

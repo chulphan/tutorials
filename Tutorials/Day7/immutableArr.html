@@ -1,0 +1,18 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function home() {
+                const list = ["apple", "orange", "watermelon"];
+                // list = "s;lfdkjsdlfk"; 오류 발생. 
+                list.push("banana"); // const 라고 해서 배열 또는 오브젝트의 수정이나 삭제를 제한하는 것은 아니다. 단, 재할당 되는것만 방지하는 것일뿐.
+            }
+            
+            // 배열의 원본을 수정하지 않고 원래의 배열에 값을 추가하여 새로운 배열을 반환하여 할당하는 식으로 한다. (redux에서 많이 쓴다는듯.... 그랬던듯....)
+
+            const immuArr = ['hello1234', 'mainpage'];
+            const immuArr2 = [].concat(immuArr, "loginpage");
+            console.log(immuArr2);
+        </script>
+    </body>
+</html>

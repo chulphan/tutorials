@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            let pre = [100, 200, 'hello', null];
+            
+            let newData = [0, 1, 2, 3, ...pre, 4, 5]; // 예전 같았으면, 배열을 잘라서 붙이고 다시 붙이는 작업을 했어야 했는데 굉장히 편하게 됐다.
+
+            console.log(newData);
+            
+            function sum(a, b, c) {
+                return a + b + c;
+            }
+
+            let temp = [100, 200, 300, 1, 2, 3];
+            
+            // spread operator가 있기 전에는 이렇게 활용했었지만..
+            console.log(sum.apply(null, temp));
+            // spread operator를 이용하면 굉장히 편하게 인자를 전해줄 수 있게 되었다.
+            console.log(sum(...temp));
+        </script>
+    </body>
+</html>

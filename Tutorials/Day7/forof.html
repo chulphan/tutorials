@@ -1,0 +1,46 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            // var data = [1, 2, undefined, NaN, null, ""];
+            // data.forEach(function(value) {
+            //     console.log(value);
+            // })
+            
+            // Array.prototype.getValue = function() {};
+
+            // // 상위클래스에서 정의된 property까지 출력하기 때문에 의도치 않은 결과를 나타낼 수도 있다.
+            // for(let idx in data) {
+            //     console.log(data[idx]);
+            // }
+            
+            // // for .. in 문에서 나왔던 문제점을 해결할 수 있다.
+            // for(let value of data) {
+            //     console.log(value);
+            // }
+
+            // // 배열만을 위한 것이 아니라 문자열에도 적용이 가능하다. // 하지만 객체에서는 사용할 수 없다. 왜냐하면 객체가 iterable이 아니기 때문에.
+            // for(let value of "hello world!!") {
+            //     console.log(value);
+            // }
+            
+            var o1 = {
+                '1': 1,
+                '2': 2
+            }
+
+            var o2 = {
+                1: 1,
+                2: 2
+            }
+
+            for (let i in o1) {
+                console.log(o1[i]);
+            }
+
+            for (let value of o2) {
+                console.log(value);
+            }
+        </script>
+    </body>
+</html>

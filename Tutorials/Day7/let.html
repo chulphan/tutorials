@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+    </head>
+    <body>
+        <ul>
+            <li>javascript</li>
+            <li>java</li>
+            <li>python</li>
+            <li>django</li>
+        </ul>
+
+        <script>
+            // closure 때문에 자꾸 4번째 입니다만 나옴.
+            // 왜냐하면 i 가 계속 바깥에 있는 i를 참고하고 있기 때문.
+            // 하지만 let을 쓰면 그 변수가 block scope 를 가지기 때문에 이런 문제를 해결할 수 있다...
+            // 원래는 함수적으로 조금 더 덧붙여야했는데 신기하다...
+            var list = document.querySelectorAll("li");
+            for(let i = 0; i < list.length; i++) {
+                list[i].addEventListener("click", function() {
+                    console.log(i + " 번째 리스트 입니다.");
+                })
+            }
+            
+            // let을 사용하지 않았을때는 아래처럼 해결했어야했다...ㅠㅠ
+
+            // var list = document.querySelectorAll("li");
+            // for(var i = 0; i < list.length; i++) {
+            //     list[i].addEventListener("click", (function(id) {
+            //         return function() {
+            //             console.log(id + ' 번째 리스트입니다.');
+            //         }
+            //     })(i));
+            // }
+            </script>
+    </body>
+</html>

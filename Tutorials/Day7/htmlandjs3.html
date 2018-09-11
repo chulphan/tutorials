@@ -1,0 +1,38 @@
+<html>
+
+<head></head>
+
+<body>
+    <div id="button-coll">
+        <input type="button" value="night" onclick="
+                document.querySelector('body').style.backgroundColor='black';
+                document.querySelector('body').style.color='white';
+            "/>
+        <input type="button" value="day" onclick="
+                document.querySelector('body').style.backgroundColor='white';
+                document.querySelector('body').style.color='black';
+        "/>
+    </div>
+    <header>
+        <h1>document.querySelector()</h1>
+    </header>
+    <article>
+        <p id="article1">
+            selector들이 지정한 그룹과 일치하는 document 내의 첫 번째 element를 반환합니다.depth-first를 우선적으로 사용해 문서의 노드들을 탐색합니다. 자식 노드의 양에 따라 첫
+            element를 검색하는 것을 순차적으로 반복하여 탐색합니다 
+        </p>
+
+        element = document.querySelector(selectors);
+        where
+
+        element는 element object 입니다.
+        selector는 쉼표로 구분되는, 하나 이상의 CSS selectors를 포함하는 문자열입니다.
+    </article>
+    <script>
+
+
+
+    </script>
+</body>
+
+</html>

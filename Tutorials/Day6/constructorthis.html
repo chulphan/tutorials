@@ -3,17 +3,19 @@
     <body>
         <script>
             var funcThis = null;
-
+            
             function Func() {
                 funcThis = this;
                 console.log('value of this in func(): ' + this);
             }
-
+            
+            // 함수로 호출을 하게 되면 funcThis 의 this 는 window 객체를 가리킨다.
             var o1 = Func();
             if(funcThis === window) {
                 document.write('funcThis === window. <br/>');
-            }
+            }  
 
+            // 하지만 new 생성자를 통해 Func를 호출하면, this 는 새로 생성된 Func를 가리킨다.
             var o2 = new Func();
             if(o2 === funcThis) {
                 document.write('funcThis === o2 <br/>');

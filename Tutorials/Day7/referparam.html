@@ -1,0 +1,22 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var a = {'age': 20};
+
+            function referFunc(b) { // 객체 데이터 타입이 파라미터로 전달되는 경우, 함수 몸체에서 그 매개변수에 대한 변화가 일어나면 인자로 전달된 변수에도 영향을 미친다.
+                b.age = 29;
+            }
+
+            referFunc(a);
+            console.log(a.age); // 그래서 결과가 29로 바뀌었다.
+
+            function noReferFunc(b) {
+                b = {'age': 40};        // 이 경우에는 함수 몸체에서 변수가 새롭게 만들어진 객체를 참조하고 있기 때문에, 인자로 전달된 변수에는 전혀 영향을 미치지 않는다.
+            }
+
+            noReferFunc(a); 
+            console.log(a.age); // referFunc에서 바뀐 값이 그대로 유지된다.
+        </script>
+    </body>
+</html>

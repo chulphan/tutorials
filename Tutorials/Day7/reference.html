@@ -1,0 +1,14 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var nameOrig = {'name': 'chul'};
+            var nameRef = nameOrig; // 현재 nameRef 는 {'name': 'chul'} 의 메모리 공간을 가리키고 있다.
+            nameOrig.name = 'chul hwan';
+            console.log(nameRef.name); // name이 참조하고 있는 객체에 변화가 생길 경우, 그 것을 참조하고 있는 nameRef 에도 영향이 생긴다.
+
+            nameRef = {'age': 29} // 하지만 이렇게 새로운 객체를 만들어서 바꾸는 순간, nameRef 는 새로 만들어진 객체를 참조하게 된다.
+            console.log(nameRef.name, nameRef.age); // undefined, 29
+        </script>
+    </body>
+</html>

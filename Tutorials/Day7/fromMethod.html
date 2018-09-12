@@ -28,10 +28,12 @@
             addMark(1, 2, 3, 4, 5);
 
             var o1 = {0: 1, 1: 2, 2: 3, 3: 4, 'length': 4};
-            let temp = Array.from(o1);
+            let temp = Array.from(o1); // Array.from을 통해서 유사배열객체가 배열이 되었다.
+            
+            console.log(temp);
 
             let newTemp = temp.map(function(value) {
-                return value;
+                return value * 2;
             });
 
             console.log(newTemp);

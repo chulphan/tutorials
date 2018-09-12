@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>로또 숫자 생성기</title>
+    </head>
+    <body>
+        <script>
+            const SETTING = {
+                name: 'LUCKY LOTTO!',
+                count: 6,
+                maxNumber: 45
+            }
+
+            function getRandomNumber({count, maxNumber}) {
+                const numberSet = new Set();
+
+                for(let i = 0; i < count; i++) {
+                    let number = Math.ceil(Math.random() * maxNumber);
+                    numberSet.add(number);
+                }
+                return numberSet;
+            }
+
+            console.log(getRandomNumber(SETTING));
+        </script>
+    </body>
+</html>

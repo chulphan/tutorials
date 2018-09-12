@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            weakmap
+        </title>
+    </head>
+    <body>
+        <script>
+            let weakMap = new WeakMap();
+            let func = function(){};
+            
+            // weakMap 이라는 변수에는 WeakMap이 있고, 그 곳에 키로 func, 값으로 0을 주었다.
+            weakMap.set(func, 0);
+            
+            // func라는 함수가 몇 번 실행 됐는지 알아보자.
+            let count = 0;
+            for(let i = 0; i < 10; i++) {
+                count = weakMap.get(func);
+                count++;
+                weakMap.set(func, count);
+            }
+            // 10이 나옴.
+            console.log(weakMap.get(func));
+            func = null; // 할당을 해제하고
+            console.log(weakMap.has(func)); // weakMap 객체에는 더 이상 func라는 키가 존재하지 않는다.
+        </script>
+    </body>
+</html>

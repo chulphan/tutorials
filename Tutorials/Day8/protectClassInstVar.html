@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>weakmap 으로 클래스 인스턴스 변수 보호하기</title>
+    </head>
+    <body>
+        <script>
+            function Area(height, weight) {
+                this.height = height;
+                this.weight = weight;
+            }
+
+            Area.prototype.getArea = function() {
+                return this.height * this.weight;
+            }
+
+            let area = new Area(10, 20);
+            console.log(area.getArea());
+            console.log(area.height); // 바로 접근이 가능함. 이러한 인스턴스 변수에 직접 접근 가능한 것을 방지하기 위해서 weakmap을 사용할 수 있음.
+
+            const wm = new WeakMap();
+
+            function Area2(height, width) {
+                wm.set(this, {height, width});
+            }
+
+            Area2.prototype.getArea2 = function() {
+                const {height, width} = wm.get(this);
+                return height * width;
+            }
+
+            let area2 = new Area2(30, 40);
+            console.log(area2.getArea2());
+            console.log(area2.height);
+            console.log(area2.width);
+            
+            // key 값을 알고 접근하면 해당 인스턴스의 값을 변경할 수 있다..
+            console.log(wm.get(area2).height = 50);
+            console.log(wm.get(area2));
+        </script>
+    </body>
+</html>

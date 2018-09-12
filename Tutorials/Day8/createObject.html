@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>간단히 객체생성하기</title>
+    </head>
+    <body>
+        <script>
+            const product1 = "pot";
+            const product1Price = 20000;
+            
+            /*
+                ES6에서는 객체를 생성할때 key와 value의 이름이 같다면, 
+                아래와 같이 한번만 써주면 알아서 product1: product1 형태로 변환해준다. 
+                객체 생성시 굉장히 편리해졌다고 할 수 있다.
+            */
+
+            const product1Obj = {
+                product1,
+                product1Price
+            }
+
+            console.log(product1Obj);
+
+            function getMyInfo() {
+                let name = "chulhwan kim";
+
+                const getName = function() {
+                    return this.name;
+                }
+
+                const setName = function(_name) {
+                    this.name = _name;
+                }
+                
+                return {name, getName, setName}; // 이러한 형태로 반환하게 만들 수도 있다.. 근데 이건 당연했던거 아닌가??
+            }
+
+            let myInfo = getMyInfo();
+
+            console.log(myInfo.name);
+            console.log(myInfo.getName());
+            myInfo.setName('chul kim');
+            console.log(myInfo.getName());
+
+            
+            const name = 'chulhwan';
+            const getName = function() {
+                console.log(name);
+            };
+
+            const obj = {
+                name,
+                getName
+            };
+
+            console.log(obj.name);
+            obj.getName();
+        </script>
+    </body>
+</html>

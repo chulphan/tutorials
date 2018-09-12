@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Destructing 활용 - JSON Parsing</title>
+</head>
+
+<body>
+    <script>
+        const foodMenus = {
+            "id": "0001",
+            "type": "donut",
+            "name": "Cake",
+            "ppu": 0.55,
+            "batters":
+            {
+                "batter":
+                [
+                    { "id": "1001", "type": "Regular" },
+                    { "id": "1002", "type": "Chocolate" },
+                    { "id": "1003", "type": "Blueberry" },
+                    { "id": "1004", "type": "Devil's Food" }
+                ]
+            },
+            "topping":
+            [
+                { "id": "5001", "type": "None" },
+                { "id": "5002", "type": "Glazed" },
+                { "id": "5005", "type": "Sugar" },
+                { "id": "5007", "type": "Powdered Sugar" },
+                { "id": "5006", "type": "Chocolate with Sprinkles" },
+                { "id": "5003", "type": "Chocolate" },
+                { "id": "5004", "type": "Maple" }
+            ]
+        }
+        
+        /*
+            foodMenus 객체에 토핑의 타입만 알고 싶다면..
+        */
+
+        // 1. foodMenus 에서 topping의 정보만 가져온다.ㅏ
+        let {topping:toppings} = foodMenus;
+        console.log(toppings);
+
+        // toppings 배열에서 type만 뽑아온다.
+        for(let topping of toppings) {
+            let {type} = topping;
+            console.log(type);
+        }
+        
+        
+    </script>
+</body>
+
+</html>

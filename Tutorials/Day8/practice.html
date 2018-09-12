@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>실습예제1</title>
+</head>
+
+<body>
+    <ul>
+        <li>JavaEE</li>
+        <li>apple</li>
+        <li>es6</li>
+        <li>function</li>
+        <li>local</li>
+        <li>naver</li>
+        <li>business</li>
+        <li>global</li>
+    </ul>
+    <h1>e 또는 E 를 포함하는 문자열</h1>
+    <div id="resultBox">
+        <ul id="resultList">
+
+        </ul>
+    </div>
+    <script>
+        function print() {
+            const lists = document.querySelectorAll("li");
+            const newLists = Array.from(lists);
+            const result = newLists.filter(function (value) {
+                let val = value.textContent;        // innerText써도 됨.
+                if (val.includes('e') || val.includes('E'))             // filter의 return value는 true or false임. 그러므로 이 부분은 간단히 return val.includes('e') 로 바꿔도 됨.... true면 callback의 매개변수를 배열로 전달할 것임.
+                    return val;
+            })
+
+            for (let r of result) {
+                console.log(r);
+            }
+
+            let res = document.getElementById('resultList');
+            for (let r of result) {
+                let appendContent = "";
+                appendContent = `<li>${r.textContent}</li>`;
+                res.innerHTML += appendContent;
+            }
+        }
+
+        print();
+    </script>
+</body>
+
+</html>

@@ -8,15 +8,15 @@
 
             console.log(newData);
             
-            function sum(a, b, c) {
-                return a + b + c;
+            function sum(a, b, c, d, e, f, g) {
+                return a + b + c + d + e + f + g;
             }
 
-            let temp = [100, 200, 300, 1, 2, 3];
+            let temp = [100, 200, 300, 1, 2, 3, 2222];
             
             // spread operator가 있기 전에는 이렇게 활용했었지만..
             console.log(sum.apply(null, temp));
-            // spread operator를 이용하면 굉장히 편하게 인자를 전해줄 수 있게 되었다.
+            // spread operator를 이용하면 굉장히 편하게 인자를 전해줄 수 있게 되었다.   
             console.log(sum(...temp));
         </script>
     </body>

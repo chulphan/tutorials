@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            let arr = [1, 2, 3, 4];
+            let arr2 = [5, 6, 7, 8];
+            let obj = {
+                arr, arr2
+            }
+
+            let bucket = new WeakSet();
+            bucket.add(arr);
+            bucket.add(arr2);
+            bucket.add(obj);
+
+            console.log(bucket);
+            // arr2 가 참조할 값이 없어지면 가비지컬렉션 대상이 된다.
+            arr2 = null;
+            // 콘솔로 출력하면 arr2가 출력되지 않아야되는데 출력이 된다...
+            console.log(bucket);
+            // 하지만 arr2라는 것을 가지고 있냐고 물어본다면 없다고 대답을 하게 됨.
+            console.log(bucket.has(arr2)); // false
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Proxy로 interception 구현</title>
+    </head>
+    <body>
+        <script>
+            let nickObj = {nick: 'chulhwan', changeCount: 0};
+            let nickProxy = new Proxy(nickObj, {
+                get: function(target, property, receiver) {
+                    console.log('receiver ', receiver);
+                    return target[property];
+                },
+                set: function(target, property, value) {
+                    console.log('changed nickname');
+                    console.log('property ', property);
+                    target['changeCount']++;
+                    target[property] = value;
+                }
+            })
+        </script>
+    </body>
+</html>

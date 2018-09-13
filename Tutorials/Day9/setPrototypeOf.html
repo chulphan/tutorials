@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Object setPrototypeOf 로 객체만들기</title>
+    </head>
+    <body>
+        <script>
+            const healthObj = {
+                showHealth: function() {
+                    console.log("오늘 운동시간 : " + this.healthTime);
+                },
+                setHealth: function(_healthTime) {
+                    this.healthTime = _healthTime;
+                }
+            }
+            
+            
+            //healthObj 타입의 객체를 생성하고, 그 곳에 name과 healthTime 프로퍼티를 넣는다.
+            const myHealth = Object.assign(Object.create(healthObj), {
+                name: 'chulhwan',
+                healthTime: "0:30"
+            });
+
+            const myHealth2 = {
+                name: 'anonymous',
+                healthTime: '1:00'
+            }
+            
+            //myHealth에 healthObj의 프로토타입을 지정해줘??
+            Object.setPrototypeOf(myHealth2, healthObj);
+
+            console.log("my health is " , myHealth);
+            console.log("my health is " , myHealth2);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>setPrototypeOf 로 객체간 prototypechain 생성하기</title>
+    </head>
+    <body>
+        <script>
+            //parent
+
+            const healthObj = {
+                showHealth: function() {
+                    return "오늘 운동시간은 " + this.healthTime;
+                },
+                setHealth: function(_healthTime) {
+                    this.healthTime = _healthTime;
+                }
+            }
+
+            //child obj.
+            const healthChildObj = {
+                getAge: function() {
+                    return this.age;
+                }
+            }
+            
+            // healthChildObj 의 prototype으로 healthObj를 지정해준다.
+            console.log(Object.setPrototypeOf(healthChildObj, healthObj));
+
+            // healthChildObj 를 상속받았음.
+            // healthObj도 쓰고 싶다면?? prototype으로 chain을 맺을 수 있다.
+            const childObj = Object.setPrototypeOf({
+                age: 22
+            }, healthChildObj);
+            
+            childObj.getAge();
+            childObj.setHealth("1:30");
+            childObj.showHealth();
+
+            console.log(childObj);
+
+
+        </script>
+    </body>
+</html>

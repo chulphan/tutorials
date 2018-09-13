@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Object.assign() method</title>
+    </head>
+    <body>
+        <script>
+            // Cloning an object
+
+            let obj = { a: 1 };
+            let copy = Object.assign({}, obj);
+            console.log(copy);
+            console.log(obj === copy);
+
+            // Merging objects.
+            let o1 = { a: 1};
+            let o2 = { b: 2};
+            let o3 = { c: 3};
+
+            // let obj2 = Object.assign(o1, o2, o3);
+            // console.log(obj2);
+            //console.log(o1); // assign은 target(여기서 o1) 객체도 바꿔버린다.)
+
+            // target object가 변경되는 것을 방지하기 위해서 빈 객체를 target object로 둔다.
+            let obj3 = Object.assign({}, o1, o2, o3);
+            console.log(obj3);
+            console.log(o1);
+
+            // properties on the prototype chan and non-enumerable properties cannot be copied.
+            let obj4 = Object.create({ foo: 1}, {
+                    bar: {
+                        value: 2 // bar is a non-enumerable property,
+                    },
+                    baz: {
+                        value: 3,
+                        enumerable: true // baz is own enumerable property.
+                    }
+                });
+
+                let copy2 = Object.assign({}, obj4);
+                console.log(copy2);
+        </script>
+    </body>
+</html>

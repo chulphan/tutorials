@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Object.create()</title>
+    </head>
+    <body>
+        <script>
+            // classical inheritance with Object.create()
+            
+            // Shape - superclass.
+            function Shape() {
+                this.x = 0;
+                this.y = 0;
+            }
+
+            // superclass method.
+            Shape.prototype.move = function(x, y) {
+                this.x += x;
+                this.y += y;
+                console.log('Shape moved.');
+            };
+
+            // Rectangle - subclass
+            function Rectangle() {
+                Shape.call(this); // call super constructor. ==> Shape 에 있는 속성이나 메소드를 물려받음 하지만 this의 범위는 Rectangle 로 귀속
+            }
+
+            // subclass extends superclass.
+            // inherit Shape class.
+            Rectangle.prototype = Object.create(Shape.prototype);
+            // assign constructor
+            Rectangle.prototype.constructor = Rectangle;
+
+            let rect = new Rectangle();
+
+            console.log('Is rect an instance of Rectangle? ', rect instanceof Rectangle);
+
+            console.log('Is rect an instance of Shape? ', rect instanceof Shape);
+
+            rect.move(3, 4);
+            
+        </script>
+    </body>
+</html>

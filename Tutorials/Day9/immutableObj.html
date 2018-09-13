@@ -19,17 +19,17 @@
 
             // 위의 작업을 간소화한 것이 아래.
 
-            let pot2 = Object.assign(productObj, {
+            let pot2 = Object.assign({}, productObj, {
                 name: 'pot2',
                 price: 19000
             })
 
             console.log(pot2);
             
-            // immmutable obj. 새로운 객체에 이전 객체의 정보를 복사해서 값을 할당.
+            // immmutable obj. 새로운 빈 객체에 새로 추가할 속성을 추가하고 이전 객체와 함께 추가한다.
             let pot3 = Object.assign({}, productObj, {
                 name: 'pot3',
-                price: '40000',
+                price: 40000,
                 material: 'steel'
             })
 

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Arrow Function의 활용</title>
+    </head>
+    <body>
+        <script>
+            setTimeout(function() {
+                console.log("setTimeout");
+            }, 1000);
+
+            // arrow function expression
+            setTimeout(() => {
+                console.log("setTimeout using arrow function");
+            }, 1000);
+
+            let newArr = [1,2,3,4,5].map(function(value, index, object) {
+                return value * 2;
+            });
+
+            // arrow function expression
+            let arrArr = [20, 30, 40, 50, 60].map((v) => {return v * v});
+
+            // 더 축약해서.. 다른 statement 없이 바로 리턴해버림.
+            // 주의할 점은 당연히 다른 statements를 써야하면 {} 로 감싸서 함수를 작성해야됨. 원래 작성하던 것처럼.
+            let arrArr2 = [20, 23, 44, 11, 34].map((v) => v * v);
+
+            console.log(arrArr);
+            console.log(arrArr2);
+        </script>
+    </body>
+</html>

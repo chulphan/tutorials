@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Object Assign 으로 JS객체 만들기</title>
+    </head>
+    <body>
+        <script>
+            // Object assign 메소드
+
+            //ES5 Object create.
+
+            const healthObj = {
+                showHealth: function() {
+                    console.log("오늘의 운동시간: " + this.healthTime);
+                }
+            }
+
+            const myHealth = Object.create(healthObj);
+            myHealth.name = 'chul';
+            myHealth.healthTime = "2:02";
+
+            console.log(myHealth);
+            
+            const yourHealth = Object.assign(Object.create(healthObj), 
+                {
+                    name: 'yoon',
+                    healthTime: '1:34'
+                }
+            );
+
+            console.log(yourHealth);
+        </script>
+    </body>
+</html>

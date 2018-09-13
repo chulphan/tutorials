@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Immutable Object</title>
+    </head>
+    <body>
+        <script>
+            const productObj = {
+                name: 'pot',
+                price: 22000
+            };
+
+            let pot1 = Object.create(productObj);
+            pot1.name = 'pot1';
+            pot1.price= 24000;
+            console.log(productObj === pot1);
+            console.log(pot1);
+            console.log(productObj);
+
+            // 위의 작업을 간소화한 것이 아래.
+
+            let pot2 = Object.assign(productObj, {
+                name: 'pot2',
+                price: 19000
+            })
+
+            console.log(pot2);
+            
+            // immmutable obj. 새로운 객체에 이전 객체의 정보를 복사해서 값을 할당.
+            let pot3 = Object.assign({}, productObj, {
+                name: 'pot3',
+                price: '40000',
+                material: 'steel'
+            })
+
+            console.log(pot3);
+
+            let pot4 = Object.assign({}, productObj, {
+                country: 'korea'
+            })
+
+            console.log(pot4);
+        </script>
+    </body>
+</html>

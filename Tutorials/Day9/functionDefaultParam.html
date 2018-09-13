@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Function Default Parameters</title>
+    </head>
+    <body>
+        <script>
+            // default param
+            function sum(value, size) {
+                size = size || 1;
+                return value * size;
+            }
+
+            console.log(sum(3, 10)); // 30
+            console.log(sum(3)); // NaN, 1.
+
+            function sum2(value, size=1) {
+                return value * size;
+            }
+
+            console.log(sum2(4));
+
+
+            function sum3(value, size={value:0}) {
+                return value + size.value;
+            }
+
+            console.log(sum3(10));
+        </script>
+    </body>
+</html>

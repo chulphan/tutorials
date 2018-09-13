@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div id="message">
+        </div>
+        </div>
+        <script>
+            const data = [
+                {
+                    name: 'coffee-bean',
+                    order: true,
+                    items: ['americano', 'milk', 'green-tea']
+                },
+                {
+                    name: 'starbucks',
+                    order: false
+                },
+                {
+                    name: '3color-coffee',
+                    order: true,
+                    items: ['latte', 'juice']
+                }
+            ];
+
+            //Tagged template literals
+            function fn(tags, name, items) {
+                console.log('tags, ', tags);
+                console.log('name, ', name);
+                console.log('items, ', items);
+                if(typeof items === "undefined") {
+                    items = "주문가능한 상품이 없습니다."; // tag 추가도 가능함.
+                }
+                return (tags[0] + name + tags[1] + items + tags[2]);
+            }
+            
+            data.forEach(function(v) {
+                let template = fn`<div><h1>welcome ${v.name} !!</h1></div>
+                                <h2>주문가능항목</h2>
+                                <div>${v.items}</div>
+                `;
+                document.getElementById("message").innerHTML += template;
+            })
+
+            // let template = fn`<div>welcome ${data[1].name} !!</div>
+            //                     <h2>주문가능항목</h2>
+            //                     <div>${data[1].items}</div>
+            // `;
+
+            // console.log(template);
+        </script>
+    </body>
+</html>

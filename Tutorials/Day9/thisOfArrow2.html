@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Arrow funtion의 this context2</title>
+</head>
+
+<body>
+    <p>Arrow Function... this...context</p>
+    <script>
+        const el = document.querySelector("p");
+        // el.addEventListener("click", function(event) {
+        //     console.log(this); // p태그를 가리키고 있다.
+        // })
+
+        const myObj = {
+            register() {
+                el.addEventListener("click", function (event) {
+                    console.log(this); // p태그를 가리키고 있다.
+                    this.printData(); // 그러므로 printData() 의 존재를 알지 못한다.
+                })
+            },
+            printData() {
+                console.log("clicked!!");
+            }
+        }
+
+        // myObj.register();
+
+        // 위의 문제를 arrow function을 통해 해결할 수 있다.
+        const myObj2 = {
+            register() {
+                el.addEventListener("click", (event) => {
+                    //console.log(this); this 의 context가 myObj2로 바뀌었다.
+                    this.printData();
+                })
+            },
+            printData() {
+                console.log("clicked...");
+            }
+        }
+
+        myObj2.register();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Arrow function의 this context</title>
+    </head> 
+    <body>
+        <script>
+            // arrow 함수의 this context가 어떻게 바뀌는지
+            const myObj = {
+                runTimeout() {
+                    setTimeout(function() {
+                        console.log(this === window);
+                        //this.printData(); 오류가 남 왜냐하면 this가 가르키고 있는게 window이기 때문에.
+                        this.printData(); // bind를 해주고 하면 됨.
+                    }.bind(this), 200);
+                },
+                printData() {
+                    console.log("hi codesquad..");
+                }
+            }
+
+            myObj.runTimeout();
+
+            // arrow function 에서는 this가 좀 달라짐.
+            // 이 경우에는 함수에 bind를 안해줘도 this가 context를 실행하는 함수로 유지하고 있다. (원래는 this가 window를 가리키는데..)
+            // 희한하네..
+            const myObj2 = {
+                runTimeout() {
+                    setTimeout(() => {
+                        this.printData();
+                    }, 200)
+                },
+                printData() {
+                    console.log("kkkkkk");
+                }
+            }
+
+            myObj2.runTimeout();
+        </script>
+    </body>
+</html>

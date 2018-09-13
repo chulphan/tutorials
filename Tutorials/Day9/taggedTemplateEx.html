@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script>
+            function template(strings, ...keys) {  // strings: ["", "", "", "!"]. 템플릿 리터럴의 형식이 들어옴. keys: [0, 1, 0] template literal의 key 값들을 받음.
+                return (function(...values) {   //values: ["Y", "A"] : key에 대한 값이 들어옴. 
+                    console.log(values);
+                    var dict = values[values.length - 1] || {};
+                    var result = [strings[0]];
+                    keys.forEach(function(key, i) {
+                        var value = Number.isInteger(key) ? values[key] : dict[key];
+                        result.push(value, strings[i + 1]);
+                    });
+                    return result.join('');
+                });
+            }
+
+            // var t1Closure = template`${0}${1}${0}!`;
+            // console.log(t1Closure('Y', 'A'));
+            // console.log(t1Closure(1, 2));
+
+            var t2Closure = template`${0} ${'foo'}!`;
+            console.log(t2Closure('Hello', {foo: 'World!'}));
+        </script>
+    </body>
+</html>

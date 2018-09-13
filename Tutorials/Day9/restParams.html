@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rest Parameters..</title>
+    </head>
+    <body>
+        <script>
+            // rest parameters.
+            function checkNum() {
+                const arg = Array.prototype.slice.call(arguments); // es5 문법. 유사배열객체를 배열로 만들어주기 위해서.
+                const result = arg.every((v) => typeof v === "number")
+                console.log(result);
+            }
+
+            // es6...
+            function checkNum2(...arg) {    // 가변길이 인자를 받기 위해서 ...arg 로 받으면 argument를 자동으로 배열형태로 바꿔준다.
+                const result = arg.every((v) => typeof v === "number")
+                console.log(result);
+            }
+
+            const result1 = checkNum(2,4,1,123,"333");
+            const result2 = checkNum2(2,123,"333");
+            const result3 = checkNum2(2,123,333,555,1000);
+        </script>
+    </body>
+</html>

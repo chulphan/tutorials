@@ -27,6 +27,7 @@
             const myObj2 = {
                 runTimeout() {
                     setTimeout(() => {
+                        console.log('this === myObj2 ', this === myObj2);
                         this.printData();
                     }, 200)
                 },

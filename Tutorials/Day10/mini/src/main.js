@@ -12,10 +12,10 @@ class Blog {
 
     registerEvents() {
         const startBtn = document.querySelector('#fetch-btn');
-      
+
         const dataURL = '../data/data.json';
         startBtn.addEventListener("click", () => {
-            if(this.clicked === false){
+            if (this.clicked === false) {
                 this.setInitData(dataURL);
                 this.clicked = true;
             } else {
@@ -24,12 +24,24 @@ class Blog {
             }
         });
 
-        this.blogList.addEventListener("click", ({target}) => {
+        this.blogList.addEventListener("click", ({ target }) => {
             let className = target.className;
-            if(className !== 'like') return;
+            if (className !== 'like') return;
             const title = target.previousElementSibling.textContent;
             this.likeSet.add(title);
+            
+            this.updateLikeList();
         })
+    }
+
+    updateLikeList() {
+        const ul = document.querySelector("#like-box > ul");
+        let likeListText = "";
+        this.likeSet.forEach((like) => {
+            likeListText += `<li>${like}</li>`;
+        })
+
+        ul.innerHTML = likeListText;
     }
 
     setInitData(dataURL) {
@@ -51,9 +63,9 @@ class Blog {
     }
 
     printPosts(list) {
-      list.forEach((content) => {
-          this.blogList.innerHTML += `<li><a href="${content.link}">${content.title}</a><a href="#" class="like">찜</a></li>`
-      })
+        list.forEach((content) => {
+            this.blogList.innerHTML += `<li><a href="${content.link}">${content.title}</a><a href="#" class="like">찜</a></li>`
+        })
     }
 }
 

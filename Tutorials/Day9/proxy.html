@@ -5,6 +5,7 @@
     </head>
     <body>
         <script>
+            // get 메소드를 정의해놓고 return method를 정의해놓지 않으면 아무 값도 안빼온다.
             let nickObj = {nick: 'chulhwan', changeCount: 0};
             let nickProxy = new Proxy(nickObj, {
                 get: function(target, property, receiver) {

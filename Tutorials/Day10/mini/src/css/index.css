@@ -3,20 +3,37 @@ a {
     text-decoration: none;
 }
 
-a:link {
+.like:link {
     color: gray;
     text-decoration: none;
 }
 
-a:visited {
+.like:visited {
     color: gray;
     text-decoration: none;
 }
 
-a:hover {
+.like:hover {
     color: gray;
     text-decoration: none;
 }
+
+
+.unlike:link {
+    color: red;
+    text-decoration: none;
+}
+
+.unlike:visited {
+    color: red;
+    text-decoration: none;
+}
+
+.unlike:hover {
+    color: red;
+    text-decoration: none;
+}
+
 
 #container {
     display: grid;
@@ -45,3 +62,11 @@ a:hover {
    color: gray;
    text-decoration: none;
 }
+
+.unlike {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-decoration: none;
+    color: red;
+ }

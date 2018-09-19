@@ -26,16 +26,27 @@ class Blog {
 
         this.blogList.addEventListener("click", ({ target }) => {
             let className = target.className;
-            if (className !== 'like') return;
-            const title = target.previousElementSibling.textContent;
-            this.likeSet.add(title);
             
+            if(className !== "like" && className != "unlike") return;
+
+            if (className !== 'like') { // unlike.
+                target.className = 'like';
+                target.innerHTML = '찜하기';
+                const title = target.previousElementSibling.textContent;
+                this.likeSet.delete(title);
+            } else {
+                target.className = 'unlike';
+                target.innerHTML = '찜취소';
+                const title = target.previousElementSibling.textContent;
+                this.likeSet.add(title);
+            }
             this.updateLikeList();
         })
     }
 
     updateLikeList() {
         const ul = document.querySelector("#like-box > ul");
+        console.log('updateLikeList is clicked.');
         let likeListText = "";
         this.likeSet.forEach((like) => {
             likeListText += `<li>${like}</li>`;
@@ -64,7 +75,7 @@ class Blog {
 
     printPosts(list) {
         list.forEach((content) => {
-            this.blogList.innerHTML += `<li><a href="${content.link}">${content.title}</a><a href="#" class="like">찜</a></li>`
+            this.blogList.innerHTML += `<li><a href="${content.link}">${content.title}</a><a href="#" class="like">찜하기</a></li>`
         })
     }
 }

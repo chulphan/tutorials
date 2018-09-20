@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App matches snapshot 1`] = `
+<div>
+  <div>
+    <h1>
+      카운터
+    </h1>
+    0
+    <br />
+    <button
+      onClick={[Function]}
+    >
+      +
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      -
+    </button>
+  </div>
+  <form
+    onSubmit={[Function]}
+  >
+    <div>
+      <input
+        name="name"
+        onChange={[Function]}
+        placeholder="이름을 입력해주세요"
+        type="text"
+        value=""
+      />
+      <button
+        type="submit"
+      >
+        등록
+      </button>
+    </div>
+  </form>
+  <div />
+</div>
+`;

@@ -1,18 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Counter from './counter/Counter';
+import NameForm from './name/NameForm';
+import NameList from './name/NameList';
+
 
 class App extends Component {
+  id = 0
+  state = {
+    namelist: []
+  }
+
+  onCreate = (data) => {
+    const { namelist } = this.state;
+
+    this.setState({
+      namelist: namelist.concat({id: this.id++, ...data})
+    });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Counter />
+        <NameForm
+          onCreate={this.onCreate}
+        />
+        <NameList
+          namelist={this.state.namelist}
+        />
       </div>
     );
   }

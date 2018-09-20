@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter decrease correctly 1`] = `
+<div>
+  <h1>
+    카운터
+  </h1>
+  0
+  <br />
+  <button
+    onClick={[Function]}
+  >
+    +
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    -
+  </button>
+</div>
+`;
+
+exports[`Counter increase correctly 1`] = `
+<div>
+  <h1>
+    카운터
+  </h1>
+  1
+  <br />
+  <button
+    onClick={[Function]}
+  >
+    +
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    -
+  </button>
+</div>
+`;
+
+exports[`Counter matches snapshot 1`] = `
+<div>
+  <h1>
+    카운터
+  </h1>
+  0
+  <br />
+  <button
+    onClick={[Function]}
+  >
+    +
+  </button>
+  <button
+    onClick={[Function]}
+  >
+    -
+  </button>
+</div>
+`;

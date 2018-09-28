@@ -4,4 +4,5 @@ function loadStories() {
   require('../src/stories');
 }
 
+
 configure(loadStories, module);

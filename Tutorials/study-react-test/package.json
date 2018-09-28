@@ -13,7 +13,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "test:generate-output": "jest --json --outputFile=jest-test-results.json"
   },
   "devDependencies": {
     "@storybook/cli": "^3.4.11",

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NameForm /> insert a new text check the tag contains form and input check has a form 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div>
+    <label>
+      이름
+    </label>
+    <input
+      id="forminput"
+      name="name"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      id="submitBtn"
+      type="submit"
+    >
+      등록
+    </button>
+  </div>
+</form>
+`;
+
+exports[`<NameForm /> insert a new text check the tag contains form and input check has an input 1`] = `
+<form
+  onSubmit={[Function]}
+>
+  <div>
+    <label>
+      이름
+    </label>
+    <input
+      id="forminput"
+      name="name"
+      onChange={[Function]}
+      type="text"
+      value=""
+    />
+    <button
+      id="submitBtn"
+      type="submit"
+    >
+      등록
+    </button>
+  </div>
+</form>
+`;

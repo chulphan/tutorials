@@ -4,6 +4,7 @@ import { Home, About, Posts } from 'pages';
 import Menu from 'components/Menu';
 
 class App extends Component {
+
     render() {
         return (
             <div>

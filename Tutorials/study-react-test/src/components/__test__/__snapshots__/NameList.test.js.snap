@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`about <NameList>.. render correctly with mock data 1`] = `
+<div>
+  <ul>
+    <li
+      key="0"
+    >
+      testantil
+    </li>
+    <li
+      key="1"
+    >
+      testchul
+    </li>
+    <li
+      key="2"
+    >
+      testkim
+    </li>
+    <li
+      key="3"
+    >
+      testhwan
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`about <NameList>.. the renderList function is called correctly 1`] = `
+Array [
+  <li>
+    1
+</li>,
+  <li>
+    2
+</li>,
+  <li>
+    3
+</li>,
+  <li>
+    4
+</li>,
+  <li>
+    5
+</li>,
+]
+`;

@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link changes the class when hovered 1`] = `
+<a
+  className="normal"
+  href="https://ekhub.co.kr"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  EKHUB
+</a>
+`;
+
+exports[`Link changes the class when hovered 2`] = `
+<a
+  className="hovered"
+  href="https://ekhub.co.kr"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  EKHUB
+</a>
+`;
+
+exports[`Link changes the class when hovered 3`] = `
+<a
+  className="normal"
+  href="https://ekhub.co.kr"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  EKHUB
+</a>
+`;
+
+exports[`renders correctly 1`] = `
+<a
+  className="normal"
+  href="https://ekhub.co.kr"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  ekhub
+</a>
+`;
+
+exports[`renders no page is set 1`] = `
+<a
+  className="normal"
+  href="#"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  ekhub
+</a>
+`;

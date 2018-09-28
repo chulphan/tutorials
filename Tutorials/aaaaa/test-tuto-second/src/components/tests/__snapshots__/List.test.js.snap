@@ -21,3 +21,25 @@ exports[`List tests matches snapshot 1`] = `
   </li>
 </ul>
 `;
+
+exports[`matches snapshot 1`] = `
+<ul
+  class="list-items"
+>
+  <li
+    class="item"
+  >
+    one
+  </li>
+  <li
+    class="item"
+  >
+    two
+  </li>
+  <li
+    class="item"
+  >
+    three
+  </li>
+</ul>
+`;

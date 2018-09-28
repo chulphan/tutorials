@@ -22,9 +22,5 @@
     "@storybook/react": "^3.4.11",
     "storybook": "^1.0.0",
     "storybook-addon-jest": "^0.0.1"
-  },
-  "jest": {
-    "bail": true,
-    "verbose": true
   }
 }
